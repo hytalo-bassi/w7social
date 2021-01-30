@@ -1,0 +1,15 @@
+extends layout.pug
+
+block content
+    if code > 800
+        - var error = (code === 860 ? 'Este e-mail já esta sendo utilizado' : 'Este nome já esta sendo usado')
+
+    h1 Cadastrar nova conta
+    div(class="lg:grid lg:grid-cols-3").p-4.w-full.text-center
+        form(action="/new", method="post").rounded.shadow-xl.p-4.w-full.border-green-200
+            input(type="email", placeholder="E-mail", name="email").rounded.border-green-200.p-2.w-full.border.m-2
+            input(type="text", placeholder="Um nome de usuário", name="username").rounded.p-2.w-full.border.border-green-200.m-2
+            input(type="password", placeholder="Senha", name="passwd").rounded.p-2.w-full.border.border-green-200.m-2
+            input(type="password", placeholder="Digite a senha novamente", name="confirm").rounded.py-2.p-2.w-full.m-2.border
+            p.text-red-500= error
+            input(type="submit", placeholder="Enviar").bg-green-200.rounded.py-2.w-full.m-2.border
