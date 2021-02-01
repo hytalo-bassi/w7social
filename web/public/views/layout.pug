@@ -1,8 +1,10 @@
-html
+doctype html
+html(lang='pt')
   head
     title w7social
-    link(rel="stylesheet", href="../style/tailwind.css")
     link(rel="stylesheet", href="../style/style.css")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="description", content="w7social")
   body
     nav.flex.items-center.justify-between.p-6.container.mx-auto
             a(href="/")
@@ -13,8 +15,8 @@ html
                 a(href="#", class="lg:mt-0 lg:inline-block").block.mt-4.text-teal-600.mr-10 Anunciar
             .flex.items-center
                 div(class="lg:mr-0").mr-5
-                    button(class="hover:text-gray-700").py-2.px-6.rounded-md.text-gray.text-lg Sign In
-                    button(class="hover:bg-teal-600").py-2.px-6.bg-teal-500.rounded-md.text-lg Sign Up
+                    button(class="hover:text-gray-700").py-2.px-4.rounded-md.text-gray.text-lg Sign In
+                    button(class="hover:bg-teal-600").py-2.px-4.bg-teal-500.rounded-md.text-lg Sign Up
                 div(class="lg:hidden").block
                     button(class="focus:outline-none").flex.items-center.px-4.py-3.border.rounded.text-teal-500.border-teal-500
                         svg(viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg").fill-current.h-3 w-3

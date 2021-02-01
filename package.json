@@ -12,6 +12,7 @@
     "autoprefixer": "^10.2.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.14",
+    "purgecss": "^4.0.0",
     "tailwindcss": "^2.0.2",
     "uuid": "^8.3.2"
   },
