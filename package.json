@@ -2,9 +2,9 @@
   "name": "w7social",
   "version": "1.0.0",
   "description": "",
-  "main": "web/index.js",
+  "main": "web/app.js",
   "scripts": {
-    "start": "echo 'Starting...' && firefox localhost:3000"
+    "start": "node web/app.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,9 @@
   },
   "tailwind:css": "postcss web/public/styles/tailwind.css -o web/public/styles/style.css",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.19.0",
     "express": "^4.17.1",
     "mongodb": "^3.6.3",
     "postcss": "^8.2.4",

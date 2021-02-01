@@ -2,7 +2,8 @@
     "mongodb":{
         "hostname":"0.0.0.0",
         "port":27017,
-        "database":"mydb"
+        "username":"",
+        "password":""
     },
     "SECRET_TOKEN" : "26baa0ca7ed56aa1bf92e190d0701c0e24c27d553bf2e679c272042e9c4f681b0724013804af7dfbf85534d9b9c35f9111176b9248b13b0cc35c33ee5d717ff2"
 }
