@@ -4,7 +4,7 @@ var path = require('path');
 
 var app = express();
 
-const port = 80
+const port = 3000
 
 app.set('view engine', 'pug')
 app.set('views', __dirname+'/public/views')
@@ -49,5 +49,15 @@ app.route('/new')
             res.redirect("/")
         })
     })
+
+app.use('/settings', require('./api/auth/auth').authenticateToken, (req, res) => {
+    res.render('settings')
+})
+
+app.get('/api/getDetails/:username', (req, res) => {
+    require('./api/getDetails').getDetails(req.params.username).then(details => {
+        res.json(details)
+    })
+})
 
 app.listen(port, () => {console.log("Server list1en port " + port)});
