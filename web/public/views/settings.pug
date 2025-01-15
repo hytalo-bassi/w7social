@@ -1,0 +1,14 @@
+extends layout.pug
+
+block append head
+    script(src="../js/settings.js")
+    
+block content
+    .grid.grid-cols-3.gap-4.p-2
+        .col-span-2.text-lg
+            h1 Olá 
+                strong#username carregando
+        div
+    h2.text-sm Sua bio
+    .w-full.p-2.rounded.border
+        p#bio carregando

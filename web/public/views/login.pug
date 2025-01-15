@@ -1,0 +1,12 @@
+extends layout.pug
+
+block content
+    if typeof(code) !== 'undefined'
+        - var error = (code === 401 ? "Usuário não cadastrado" : "Senha incorreta") 
+    div(class="lg:grid lg:grid-cols-3").p-4.w-full.text-center
+        form(action="/login", method="post").rounded.shadow-xl.p-4.w-full.border-green-200
+            input(type="text", placeholder="Seu nome de usuário", name="username").rounded.border-green-200.p-2.w-full.border.m-2
+            input(type="password", placeholder="Sua senha", name="passwd").rounded.p-2.w-full.border.border-green-200.m-2
+            p.text-red-500= error
+            input(type="submit", placeholder="Enviar").bg-green-200.rounded.py-2.w-full.m-2.border
+            a(href="/new").text-blue-800.underline Criar nova conta

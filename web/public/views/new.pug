@@ -1,0 +1,20 @@
+extends layout.pug
+
+block append head
+    script(src="../js/form.js")
+block content
+    if code > 800
+        - var error = (code === 860 ? 'Este e-mail já esta sendo utilizado' : 'Este nome já esta sendo usado')
+    h1 Cadastrar nova conta
+    div(class="lg:grid lg:grid-cols-3").p-4.w-full
+        form(action="/new", method="post").rounded.shadow-xl.p-4.w-full.border-green-200.space-y-4#form
+            label(for="email") Endereço eletrônico
+                input(type="email", placeholder="E-mail", name="email", pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$", require).rounded.border-green-200.p-2.w-full.border
+            label(for="username") Nome de usuário
+                input(type="text", placeholder="Um nome de usuário", name="username", require="[^\s@]", minlength="4").rounded.p-2.w-full.border.border-green-200
+            label(for="passwd") Senha
+                input(type="password", placeholder="Senha", name="passwd", require, minlength="8").rounded.p-2.w-full.border.border-green-200#passwd
+            label(for="confirm") Confirme a senha
+                input(type="password", placeholder="Digite a senha novamente", name="confirm", require).rounded.py-2.p-2.w-full.border.border-green-200#confirm
+            p.text-red-500#err_client= error
+            input(type="submit", placeholder="Enviar").bg-green-200.rounded.py-2.w-full.border
